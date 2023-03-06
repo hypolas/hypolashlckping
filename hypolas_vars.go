@@ -14,7 +14,7 @@ var (
 
 // Your variables
 var (
-	host              = helpers.NewEnvVars("HYPOLAS_HEALTHCHECK_PING_HOST", "www.google.fr")
+	host              = helpers.NewEnvVars("HYPOLAS_HEALTHCHECK_PING_HOST", "")
 	pingCount         = helpers.NewEnvVars("HYPOLAS_HEALTHCHECK_PING_COUNT", "4")
 	maxPercentLost, _ = strconv.Atoi(helpers.NewEnvVars("HYPOLAS_HEALTHCHECK_PING_MAX_PERCENT_LOST", "0"))
 )
