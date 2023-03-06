@@ -12,7 +12,7 @@ Export this environnement variables:
 | Variable | Default value |  Description|   Required |   Set on | 
 |---|---|---|---|---|
 | `HYPOLAS_HEALTHCHECK_TYPE`  | *""*  | Type of healthcheck  | **X** | **ping** |
-| `HYPOLAS_HEALTHCHECK_PING_COUNT`  | *4*  | How many ping will be send  |
+| `HYPOLAS_HEALTHCHECK_PING_COUNT`  | *4*  | Number of pings  |
 | `HYPOLAS_HEALTHCHECK_PING_HOST`  | *""*  | Hostname/IP of target   | **X**
 | `HYPOLAS_HEALTHCHECK_PING_MAX_PERCENT_LOST`  | *0*  | Max percent packet lost  | 
 | `HYPOLAS_LOGS_FILE`  | *""*  | Path of logs file  | **X**
