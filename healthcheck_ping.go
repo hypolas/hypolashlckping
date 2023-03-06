@@ -3,6 +3,7 @@ package hypolashlckping
 import (
 	"github.com/go-ping/ping"
 	helpers "github.com/hypolas/hypolashlckhelpers"
+	"runtime"
 	"strconv"
 	"sync"
 	"time"
@@ -33,7 +34,9 @@ func timeout(w *sync.WaitGroup, t time.Duration) bool {
 	go func() {
 		defer close(c)
 		pinger, err := ping.NewPinger(host)
-		// pinger.SetPrivileged(true)
+		if runtime.GOOS == "windows" {
+			pinger.SetPrivileged(true)
+		}
 		if err != nil {
 			log.Err.Fatalln(err)
 		}
