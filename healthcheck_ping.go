@@ -8,6 +8,7 @@ import (
 	helpers "github.com/hypolas/hypolashlckhelpers"
 )
 
+// Call is the entry module point
 func Call() helpers.Result {
 	pinger, err := ping.NewPinger(host)
 	if runtime.GOOS == "windows" {
