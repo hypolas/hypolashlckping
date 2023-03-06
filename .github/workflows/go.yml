@@ -7,12 +7,6 @@ on:
   push:
     branches: [ "main", "dev" ]
 
-env:
-  HYPOLAS_LOGS_FILE: test/logs.log
-  HYPOLAS_HEALTHCHECK_HTTP_URL: https://httpbin.org/get
-  HYPOLAS_HEALTHCHECK_HTTP_EXPECTED: gzip
-  HYPOLAS_HEALTHCHECK_HTTP_JSON: headers__Accept-Encoding
-
 jobs:
   build:
     runs-on: ubuntu-latest
