@@ -9,7 +9,13 @@ import (
 
 // TestHTTPApi get API et test result
 func TestPing(t *testing.T) {
-	Call()
+	result := Call()
+
+	if !result.IsUP {
+		log.Err.Println("Is False")
+	} else {
+		log.Err.Println("OK")
+	}
 
 	readFile, err := os.Open(log.LogFile.Name())
 
