@@ -3,7 +3,6 @@ package hypolashlckping
 import (
 	"github.com/go-ping/ping"
 	helpers "github.com/hypolas/hypolashlckhelpers"
-	"runtime"
 	"strconv"
 	"sync"
 	"time"
