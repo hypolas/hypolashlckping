@@ -33,7 +33,7 @@ func timeout(w *sync.WaitGroup, t time.Duration) bool {
 	go func() {
 		defer close(c)
 		pinger, err := ping.NewPinger(host)
-		pinger.SetPrivileged(true)
+		// pinger.SetPrivileged(true)
 		if err != nil {
 			log.Err.Fatalln(err)
 		}
