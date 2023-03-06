@@ -16,6 +16,7 @@ Export this environnement variables:
 
 | Variable | Default value |  Description|   Required |
 |---|---|---|---|
+| `HYPOLAS_HEALTHCHECK_TYPE`  | *"ping"*  | Type of healthcheck  | false
 | `HYPOLAS_HEALTHCHECK_PING_COUNT`  | *4*  | How many ping will be send  | false
 | `HYPOLAS_HEALTHCHECK_PING_HOST`  | *""*  | Hostname/IP of target   | **true**
 | `HYPOLAS_HEALTHCHECK_PING_MAX_PERCENT_LOST`  | *0*  | Max percent packet lost  | false
@@ -27,6 +28,7 @@ Export this environnement variables:
 ```Dockerfile
 FROM myimage:1.0.0
 
+ENV HYPOLAS_HEALTHCHECK_TYPE="ping"
 ENV HYPOLAS_HEALTHCHECK_PING_COUNT="5"
 ENV HYPOLAS_HEALTHCHECK_PING_HOST="wantpingup.lan"
 ENV HYPOLAS_LOGS_FILE="log/logs.log"
@@ -45,6 +47,7 @@ services:
   app:
     image: myimage:1.0.0
     environment:
+      HYPOLAS_HEALTHCHECK_TYPE: "ping"
       HYPOLAS_HEALTHCHECK_PING_COUNT: 5
       HYPOLAS_HEALTHCHECK_PING_HOST: wantpingup.lan
       HYPOLAS_LOGS_FILE: log/logs.log
@@ -61,16 +64,18 @@ services:
 ...launcher.sh
 #!/usr/bin/env bash
 
+export HYPOLAS_HEALTHCHECK_TYPE="ping"
 export HYPOLAS_HEALTHCHECK_PING_COUNT="5"
 export HYPOLAS_HEALTHCHECK_PING_HOST="wantpingup.lan"
 export HYPOLAS_LOGS_FILE="log/logs.log"
 ./healthcheck
 ```
 
-## Directly on Window
+## Directly on Windows
 
 ```bash
 ...launcher.bat
+set HYPOLAS_HEALTHCHECK_TYPE="ping"
 set HYPOLAS_HEALTHCHECK_PING_COUNT="5"
 set HYPOLAS_HEALTHCHECK_PING_HOST="wantpingup.lan"
 set HYPOLAS_LOGS_FILE="log/logs.log"
