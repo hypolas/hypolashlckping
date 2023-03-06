@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 export HYPOLAS_HEALTHCHECK_TYPE=ping
 export HYPOLAS_HEALTHCHECK_PING_COUNT=4
 export HYPOLAS_HEALTHCHECK_PING_HOST=www.google.fr
