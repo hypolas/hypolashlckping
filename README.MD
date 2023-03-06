@@ -14,6 +14,7 @@ Export this environnement variables:
 | `HYPOLAS_HEALTHCHECK_TYPE`  | *""*  | Type of healthcheck  | **X** | **ping** |
 | `HYPOLAS_HEALTHCHECK_PING_COUNT`  | *4*  | Number of pings  |
 | `HYPOLAS_HEALTHCHECK_PING_HOST`  | *""*  | Hostname/IP of target   | **X**
+| `HYPOLAS_HEALTHCHECK_PING_TIMEOUT`  | *60*  | Timeout in seconds   | 
 | `HYPOLAS_HEALTHCHECK_PING_MAX_PERCENT_LOST`  | *0*  | Max percent packet lost  | 
 | `HYPOLAS_LOGS_FILE`  | *""*  | Path of logs file  | **X**
 
@@ -24,6 +25,7 @@ Export this environnement variables:
 FROM myimage:1.0.0
 
 ENV HYPOLAS_HEALTHCHECK_TYPE="ping"
+ENV HYPOLAS_HEALTHCHECK_PING_TIMEOUT="10"
 ENV HYPOLAS_HEALTHCHECK_PING_COUNT="5"
 ENV HYPOLAS_HEALTHCHECK_PING_HOST="wantpingup.lan"
 ENV HYPOLAS_LOGS_FILE="log/logs.log"
@@ -43,6 +45,7 @@ services:
     image: myimage:1.0.0
     environment:
       HYPOLAS_HEALTHCHECK_TYPE: "ping"
+      HYPOLAS_HEALTHCHECK_PING_TIMEOUT: 10
       HYPOLAS_HEALTHCHECK_PING_COUNT: 5
       HYPOLAS_HEALTHCHECK_PING_HOST: wantpingup.lan
       HYPOLAS_LOGS_FILE: log/logs.log
@@ -60,6 +63,7 @@ services:
 #!/usr/bin/env bash
 
 export HYPOLAS_HEALTHCHECK_TYPE="ping"
+export HYPOLAS_HEALTHCHECK_PING_TIMEOUT="10"
 export HYPOLAS_HEALTHCHECK_PING_COUNT="5"
 export HYPOLAS_HEALTHCHECK_PING_HOST="wantpingup.lan"
 export HYPOLAS_LOGS_FILE="log/logs.log"
@@ -71,6 +75,7 @@ export HYPOLAS_LOGS_FILE="log/logs.log"
 ```bash
 ...launcher.bat
 set HYPOLAS_HEALTHCHECK_TYPE="ping"
+set HYPOLAS_HEALTHCHECK_PING_TIMEOUT="10"
 set HYPOLAS_HEALTHCHECK_PING_COUNT="5"
 set HYPOLAS_HEALTHCHECK_PING_HOST="wantpingup.lan"
 set HYPOLAS_LOGS_FILE="log/logs.log"

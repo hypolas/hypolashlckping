@@ -16,6 +16,6 @@ var (
 var (
 	host                 = helpers.NewEnvVars("HYPOLAS_HEALTHCHECK_PING_HOST", "")
 	pingCount            = helpers.NewEnvVars("HYPOLAS_HEALTHCHECK_PING_COUNT", "4")
-	testTimeoutInSeconds = helpers.NewEnvVars("HYPOLAS_HEALTHCHECK_PING_TIMEOUT", "20")
+	testTimeoutInSeconds = helpers.NewEnvVars("HYPOLAS_HEALTHCHECK_PING_TIMEOUT", "60")
 	maxPercentLost, _    = strconv.Atoi(helpers.NewEnvVars("HYPOLAS_HEALTHCHECK_PING_MAX_PERCENT_LOST", "0"))
 )
